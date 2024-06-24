@@ -1,0 +1,14 @@
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.AssemblyInfoInputs.cache
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.AssemblyInfo.cs
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.csproj.CoreCompileInputs.cache
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\bin\Debug\net7.0\Bai1.exe
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\bin\Debug\net7.0\Bai1.deps.json
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\bin\Debug\net7.0\Bai1.runtimeconfig.json
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\bin\Debug\net7.0\Bai1.dll
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\bin\Debug\net7.0\Bai1.pdb
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.dll
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\refint\Bai1.dll
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.pdb
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\Bai1.genruntimeconfig.cache
+D:\.NET\Project\Lab4_Delegate-Event-Linq\Bai1\obj\Debug\net7.0\ref\Bai1.dll
