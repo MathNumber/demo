@@ -63,30 +63,30 @@ namespace FormulaOneApp.Controllers
                     UserName = requestDto.Email,
                     EmailConfirmed = false
                 };
-                var is_created = await _userManager.CreateAsync(new_user, requestDto.Password);
+                await _userManager.CreateAsync(new_user, requestDto.Password);
 
-                if (is_created.Succeeded)
-                {
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(new_user);
+                //if (is_created.Succeeded)
+                //{
+                //    var code = await _userManager.GenerateEmailConfirmationTokenAsync(new_user);
 
-                    var email_body = $"<p>Please confirm your email <a href='#URL#'><button>Click here</button></a>.</p>";
+                //    var email_body = $"<p>Please confirm your email <a href='#URL#'><button>Click here</button></a>.</p>";
 
-                    var callback_url = Request.Scheme + "://" + Request.Host + Url.Action("ConfirmEmail", "Authentication", new { userId = new_user.Id, code = code });
+                //    var callback_url = Request.Scheme + "://" + Request.Host + Url.Action("ConfirmEmail", "Authentication", new { userId = new_user.Id, code = code });
 
-                    var body = email_body.Replace("#URL#", callback_url);
+                //    var body = email_body.Replace("#URL#", callback_url);
 
-                    var result = SendEmail(body, new_user.Email);
+                //    var result = SendEmail(body, new_user.Email);
 
-                    if (result)
-                    {
-                        return Ok("Please verify your email, through the verification email we have just sent.");
-                    }
-                    else
-                    {
-                        await _userManager.DeleteAsync(new_user);
-                        return Ok("Please request an email verification link");
-                    }
-                }
+                //    if (result)
+                //    {
+                //        return Ok("Please verify your email, through the verification email we have just sent.");
+                //    }
+                //    else
+                //    {
+                //        await _userManager.DeleteAsync(new_user);
+                //        return Ok("Please request an email verification link");
+                //    }
+                //}
 
                 return BadRequest(new AuthResult()
                 {
@@ -150,15 +150,15 @@ namespace FormulaOneApp.Controllers
                         Result = false
                     });
 
-                if (!existing_user.EmailConfirmed)
-                    return BadRequest(new AuthResult()
-                    {
-                        Errors = new List<string>()
-                {
-                    "Email needs to be confirmed"
-                },
-                        Result = false
-                    });
+                //if (!existing_user.EmailConfirmed)
+                //    return BadRequest(new AuthResult()
+                //    {
+                //        Errors = new List<string>()
+                //{
+                //    "Email needs to be confirmed"
+                //},
+                //        Result = false
+                //    });
 
                 var isCorrect = await _userManager.CheckPasswordAsync(existing_user, loginRequest.Password);
 

@@ -95,3 +95,13 @@ D:\.NET\Project\ChatFash\obj\Debug\net6.0\refint\ChatFash.dll
 D:\.NET\Project\ChatFash\obj\Debug\net6.0\ChatFash.pdb
 D:\.NET\Project\ChatFash\obj\Debug\net6.0\ChatFash.genruntimeconfig.cache
 D:\.NET\Project\ChatFash\obj\Debug\net6.0\ref\ChatFash.dll
+D:\.NET\Project\ChatFash\obj\Debug\net6.0\ChatFash.sourcelink.json
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\.NET\Project\ChatFash\bin\Debug\net6.0\Serilog.Sinks.File.dll

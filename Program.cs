@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System;
 using System.Text;
 
@@ -12,6 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Host.UseSerilog((ctx, config)=>
+{
+    config.WriteTo.Console().MinimumLevel.Information();
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -27,12 +32,13 @@ var tokenValidationParameter = new TokenValidationParameters()
     ValidateIssuer = false,
     ValidateAudience = false,
     ValidateLifetime = true,
-    RequireExpirationTime = false,
+    RequireExpirationTime = true,
     ClockSkew = TimeSpan.Zero
 };
 
 builder.Services.AddAuthentication(options =>
 {
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
@@ -64,6 +70,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
