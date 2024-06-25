@@ -478,10 +478,10 @@ namespace FormulaOneApp.Controllers
             var request = new RestRequest("", Method.Post);
             client.Authenticator =
                 new HttpBasicAuthenticator("api", _configuration.GetSection("EmailConfig:API_KEY").Value);
-            request.AddParameter("domain", "sandboxbc1d9bde378043a3afeed77e94fd3de8.mailgun.org", ParameterType.UrlSegment);
+            request.AddParameter("domain", "", ParameterType.UrlSegment);
             request.Resource = "{domain}/messages";
-            request.AddParameter("from", "ChatFashion <postmaster@sandboxbc1d9bde378043a3afeed77e94fd3de8.mailgun.org>");
-            request.AddParameter("to", "xepaso5479@dpsols.com");
+            request.AddParameter("from", "");
+            request.AddParameter("to", "");
             request.AddParameter("subject", "Email Verification");
 
             request.AddParameter("html", body);
