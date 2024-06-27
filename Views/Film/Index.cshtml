@@ -1,0 +1,55 @@
+﻿@model List<SPA.Models.Category>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h2>Categories</h2>
+
+<ul id="categoryList">
+    @foreach (var category in Model)
+    {
+        <li>
+            <a href="#" class="category-link" data-cateid="@category.CateID">@category.Name</a>
+        </li>
+    }
+</ul>
+
+<h2>Films</h2>
+<div id="filmList">
+    <!-- Films will be loaded here via AJAX -->
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.category-link').click(function (e) {
+                e.preventDefault();
+                var cateID = $(this).data('cateid');
+                $.ajax({
+                    url: '@Url.Action("GetFilmsByCategory", "Film")',
+                    type: 'GET',
+                    data: { cateID: cateID },
+                    success: function (data) {
+                        var filmList = $('#filmList');
+                        filmList.empty();
+                        if (data.length > 0) {
+                            var table = $('<table class="table"><thead><tr><th>Film ID</th><th>Name</th><th>Description</th></tr></thead><tbody></tbody></table>');
+                            $.each(data, function (index, film) {
+                                var row = $('<tr><td>' + film.filmID + '</td><td>' + film.name + '</td><td>' + film.description + '</td></tr>');
+                                table.find('tbody').append(row);
+                            });
+                            filmList.append(table);
+                        } else {
+                            filmList.append('<p>No films found for this category.</p>');
+                        }
+                    },
+                    error: function () {
+                        alert('Error loading films.');
+                    }
+                });
+            });
+        });
+    </script>
+}
